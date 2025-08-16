@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍑 FL Studio Tips Database</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e6edf3;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(33, 38, 45, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid #30363d;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #d34714, #ca720d);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .filters-container {
+            background: #21262d;
+            padding: 25px;
+            border-bottom: 1px solid #30363d;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .filters-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .filters-container::-webkit-scrollbar-track {
+            background: #161b22;
+            border-radius: 4px;
+        }
+
+        .filters-container::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 4px;
+        }
+
+        .filters-container::-webkit-scrollbar-thumb:hover {
+            background: #424a53;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #30363d;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+            background: #0d1117;
+            color: #e6edf3;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: #ff6b35;
+            background: #161b22;
+        }
+
+        .search-bar::placeholder {
+            color: #7d8590;
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .filter-group {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid #30363d;
+            display: flex;
+            flex-direction: column;
+            max-height: 280px;
+        }
+
+        .filter-group h3 {
+            margin-bottom: 10px;
+            color: #f0f6fc;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 0;
+            background: #161b22;
+            padding-bottom: 5px;
+            z-index: 5;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            overflow-y: auto;
+            padding: 5px 0;
+        }
+
+        .filter-options::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .filter-options::-webkit-scrollbar-track {
+            background: #0d1117;
+            border-radius: 3px;
+        }
+
+        .filter-options::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 3px;
+        }
+
+        .filter-options::-webkit-scrollbar-thumb:hover {
+            background: #424a53;
+        }
+
+        .filter-option {
+            padding: 6px 12px;
+            background: #30363d;
+            border: none;
+            border-radius: 15px;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            color: #e6edf3;
+            flex-shrink: 0;
+        }
+
+        .filter-option:hover {
+            background: #424a53;
+            transform: translateY(-1px);
+        }
+
+        .filter-option.active {
+            background: #ff6b35;
+            color: white;
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+        }
+
+        .stats {
+            padding: 15px 25px;
+            background: #0d1117;
+            border-bottom: 1px solid #30363d;
+            text-align: center;
+            font-weight: 600;
+            color: #f0f6fc;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .results-container {
+            padding: 25px;
+            max-height: 1080px;
+            overflow-y: auto;
+            background: #0d1117;
+        }
+
+        .results-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .results-container::-webkit-scrollbar-track {
+            background: #161b22;
+            border-radius: 4px;
+        }
+
+        .results-container::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 4px;
+        }
+
+        .results-container::-webkit-scrollbar-thumb:hover {
+            background: #424a53;
+        }
+
+        .technique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .technique-card {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+        }
+
+        .technique-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            border-color: #424a53;
+        }
+
+        .technique-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .technique-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #f0f6fc;
+            margin-bottom: 5px;
+        }
+
+        .favorite-star {
+            font-size: 1.5em;
+            color: #ffc107;
+            cursor: pointer;
+            filter: drop-shadow(0 0 4px rgba(255, 193, 7, 0.5));
+        }
+
+        .technique-category {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: white;
+        }
+
+        .technique-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #8b949e;
+        }
+
+        .meta-value {
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .difficulty-easy { 
+            background: rgba(46, 160, 67, 0.2); 
+            color: #3fb950; 
+            border: 1px solid rgba(46, 160, 67, 0.3);
+        }
+        .difficulty-intermediate { 
+            background: rgba(255, 191, 0, 0.2); 
+            color: #f8a349; 
+            border: 1px solid rgba(255, 191, 0, 0.3);
+        }
+        .difficulty-hard { 
+            background: rgba(248, 81, 73, 0.2); 
+            color: #f85149; 
+            border: 1px solid rgba(248, 81, 73, 0.3);
+        }
+
+        .stage-composition { 
+            background: rgba(56, 139, 253, 0.2); 
+            color: #58a6ff; 
+            border: 1px solid rgba(56, 139, 253, 0.3);
+        }
+        .stage-mixing { 
+            background: rgba(255, 107, 53, 0.2); 
+            color: #ff7b3a; 
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+        .stage-mastering { 
+            background: rgba(163, 113, 247, 0.2); 
+            color: #a371f7; 
+            border: 1px solid rgba(163, 113, 247, 0.3);
+        }
+
+        .optionality-necessary { 
+            background: rgba(248, 81, 73, 0.2); 
+            color: #f85149; 
+            border: 1px solid rgba(248, 81, 73, 0.3);
+        }
+        .optionality-optional { 
+            background: rgba(46, 160, 67, 0.2); 
+            color: #3fb950; 
+            border: 1px solid rgba(46, 160, 67, 0.3);
+        }
+
+        .technique-tags {
+            margin: 15px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin: 2px 4px 2px 0;
+            font-weight: 500;
+            border: 1px solid transparent;
+        }
+
+        .technique-plugins {
+            margin: 15px 0;
+        }
+
+        .plugin {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin: 2px 4px 2px 0;
+            font-weight: 600;
+            border: 1px solid transparent;
+        }
+
+        .technique-howto {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+            margin-top: 15px;
+            font-style: italic;
+            line-height: 1.5;
+            color: #e6edf3;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8b949e;
+        }
+
+        .no-results i {
+            font-size: 4em;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .clear-filters {
+            background: linear-gradient(135deg, #f85149, #da3633);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(248, 81, 73, 0.3);
+            position: sticky;
+            bottom: 0;
+            z-index: 10;
+        }
+
+        .clear-filters:hover {
+            background: linear-gradient(135deg, #da3633, #b91c1c);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(248, 81, 73, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .technique-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .technique-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-group {
+                max-height: 150px;
+            }
+
+            .filters-container {
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍑 FL Studio Tips & Techniques</h1>
+            <p>A comprehensive database of tips for music production</p>
+        </div>
+
+        <div class="filters-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search techniques, shortcuts, or descriptions...">
+            
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <h3>Category</h3>
+                    <div class="filter-options" id="categoryFilters"></div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Production Stage</h3>
+                    <div class="filter-options" id="stageFilters"></div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Difficulty</h3>
+                    <div class="filter-options" id="difficultyFilters"></div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Optionality</h3>
+                    <div class="filter-options" id="optionalityFilters"></div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Plugins</h3>
+                    <div class="filter-options" id="pluginFilters"></div>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Tags</h3>
+                    <div class="filter-options" id="tagFilters"></div>
+                </div>
+            </div>
+            
+            <button class="clear-filters" onclick="clearAllFilters()">Clear All Filters</button>
+        </div>
+
+        <div class="stats" id="stats"></div>
+
+        <div class="results-container">
+            <div class="technique-grid" id="results"></div>
+        </div>
+    </div>
+
+    <script>
+        let allTechniques = [];
+        let filteredTechniques = [];
+        let activeFilters = {
+            category: new Set(),
+            stage: new Set(),
+            difficulty: new Set(),
+            optionality: new Set(),
+            plugins: new Set(),
+            tags: new Set()
+        };
+        let searchQuery = '';
+
+        // Color palettes for different elements
+        const categoryColors = [
+            { bg: 'rgba(163, 113, 247, 0.2)', color: '#a371f7', border: 'rgba(163, 113, 247, 0.3)' }, // Purple
+            { bg: 'rgba(255, 107, 53, 0.2)', color: '#ff7b3a', border: 'rgba(255, 107, 53, 0.3)' }, // Orange
+            { bg: 'rgba(236, 72, 153, 0.2)', color: '#ec4899', border: 'rgba(236, 72, 153, 0.3)' }, // Pink
+            { bg: 'rgba(255, 191, 0, 0.2)', color: '#ffbf00', border: 'rgba(255, 191, 0, 0.3)' }, // Yellow
+            { bg: 'rgba(255,255,255,0.2)', color: '#fff', border: 'rgba(255,255,255,0.3)' }, // White - Colouring starts here, then up
+            { bg: 'rgba(255, 191, 0, 0.2)', color: '#ffbf00', border: 'rgba(255, 191, 0, 0.3)' }, // Yellow
+            { bg: 'rgba(6, 182, 212, 0.2)', color: '#06b6d4', border: 'rgba(6, 182, 212, 0.3)' }, // Cyan
+            { bg: 'rgba(236, 72, 153, 0.2)', color: '#ec4899', border: 'rgba(236, 72, 153, 0.3)' }, // Pink
+            { bg: 'rgba(139, 69, 19, 0.3)', color: '#d2691e', border: 'rgba(139, 69, 19, 0.4)' }, // Brown
+            { bg: 'rgba(255, 107, 53, 0.2)', color: '#ff7b3a', border: 'rgba(255, 107, 53, 0.3)' }, // Orange
+            { bg: 'rgba(75, 85, 99, 0.2)', color: '#9ca3af', border: 'rgba(75, 85, 99, 0.3)' } // Gray
+        ];
+
+        const pluginColors = [
+            { bg: 'rgba(34, 197, 94, 0.2)', color: '#22c55e', border: 'rgba(34, 197, 94, 0.3)' }, // Green - Playlist
+            { bg: 'rgba(251, 146, 60, 0.2)', color: '#fb923c', border: 'rgba(251, 146, 60, 0.3)' }, // Orange - Channel Rack
+            { bg: 'rgba(239, 68, 68, 0.2)', color: '#ef4444', border: 'rgba(239, 68, 68, 0.3)' }, // Red - Fruity Limiter
+            { bg: 'rgba(255, 191, 0, 0.2)', color: '#ffbf00', border: 'rgba(255, 191, 0, 0.3)' }, // Yellow - Piano Roll
+            { bg: 'rgba(156, 163, 175, 0.2)', color: '#9ca3af', border: 'rgba(156, 163, 175, 0.3)' }, // Cool Gray
+            { bg: 'rgba(16, 185, 129, 0.2)', color: '#10b981', border: 'rgba(16, 185, 129, 0.3)' }, // Emerald
+            { bg: 'rgba(239, 68, 68, 0.2)', color: '#ef4444', border: 'rgba(239, 68, 68, 0.3)' }, // Red - Compressor
+            { bg: 'rgba(34, 197, 94, 0.2)', color: '#22c55e', border: 'rgba(34, 197, 94, 0.3)' }, // Lime
+            { bg: 'rgba(251, 146, 60, 0.2)', color: '#fb923c', border: 'rgba(251, 146, 60, 0.3)' }, // Amber
+            { bg: 'rgba(14, 165, 233, 0.2)', color: '#0ea5e9', border: 'rgba(14, 165, 233, 0.3)' } // Sky
+        ];
+
+        const tagColors = [
+            { bg: 'rgba(168, 85, 247, 0.2)', color: '#a855f7', border: 'rgba(168, 85, 247, 0.3)' }, // Purple
+            { bg: 'rgba(59, 130, 246, 0.2)', color: '#3b82f6', border: 'rgba(59, 130, 246, 0.3)' }, // Blue
+            { bg: 'rgba(34, 197, 94, 0.2)', color: '#22c55e', border: 'rgba(34, 197, 94, 0.3)' }, // Green
+            { bg: 'rgba(239, 68, 68, 0.2)', color: '#ef4444', border: 'rgba(239, 68, 68, 0.3)' }, // Red
+            { bg: 'rgba(245, 158, 11, 0.2)', color: '#f59e0b', border: 'rgba(245, 158, 11, 0.3)' }, // Yellow
+            { bg: 'rgba(20, 184, 166, 0.2)', color: '#14b8a6', border: 'rgba(20, 184, 166, 0.3)' }, // Teal
+            { bg: 'rgba(244, 63, 94, 0.2)', color: '#f43f5e', border: 'rgba(244, 63, 94, 0.3)' }, // Rose
+            { bg: 'rgba(99, 102, 241, 0.2)', color: '#6366f1', border: 'rgba(99, 102, 241, 0.3)' }, // Indigo
+            { bg: 'rgba(139, 92, 246, 0.2)', color: '#8b5cf6', border: 'rgba(139, 92, 246, 0.3)' }, // Violet
+            { bg: 'rgba(6, 182, 212, 0.2)', color: '#06b6d4', border: 'rgba(6, 182, 212, 0.3)' }, // Cyan
+            { bg: 'rgba(132, 204, 22, 0.2)', color: '#84cc16', border: 'rgba(132, 204, 22, 0.3)' }, // Lime
+            { bg: 'rgba(251, 113, 133, 0.2)', color: '#fb7185', border: 'rgba(251, 113, 133, 0.3)' } // Pink
+        ];
+
+        let categoryColorMap = {};
+        let pluginColorMap = {};
+        let tagColorMap = {};
+
+        // Generate color hash for consistent colors
+        function hashCode(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return Math.abs(hash);
+        }
+
+        // Assign colors to categories, plugins, and tags
+        function assignColors() {
+            const categories = [...new Set(allTechniques.map(t => t.category))];
+            const plugins = [...new Set(allTechniques.flatMap(t => t['plugin(s)'] || []))];
+            const tags = [...new Set(allTechniques.flatMap(t => t.tags || []))];
+
+            categories.forEach((category, index) => {
+                categoryColorMap[category] = categoryColors[index % categoryColors.length];
+            });
+
+            plugins.forEach((plugin, index) => {
+                pluginColorMap[plugin] = pluginColors[index % pluginColors.length];
+            });
+
+            tags.forEach((tag, index) => {
+                tagColorMap[tag] = tagColors[index % tagColors.length];
+            });
+        }
+
+        // Load data from JSON file
+        async function loadData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                allTechniques = data.techniques;
+                filteredTechniques = [...allTechniques];
+                
+                assignColors();
+                initializeFilters();
+                displayResults();
+                updateStats();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('results').innerHTML = `
+                    <div class="no-results">
+                        <p>❌ Error loading techniques database. Please make sure data.json exists and is properly formatted.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize filter options
+        function initializeFilters() {
+            const categories = [...new Set(allTechniques.map(t => t.category))].sort();
+            const stages = [...new Set(allTechniques.map(t => t.stage))].sort();
+            const difficulties = [...new Set(allTechniques.map(t => t.difficulty))].sort();
+            const optionalities = [...new Set(allTechniques.map(t => t.optionality))].sort();
+            const plugins = [...new Set(allTechniques.flatMap(t => t['plugin(s)'] || []))].sort();
+            const tags = [...new Set(allTechniques.flatMap(t => t.tags || []))].sort();
+
+            createFilterButtons('categoryFilters', categories, 'category');
+            createFilterButtons('stageFilters', stages, 'stage');
+            createFilterButtons('difficultyFilters', difficulties, 'difficulty');
+            createFilterButtons('optionalityFilters', optionalities, 'optionality');
+            createFilterButtons('pluginFilters', plugins, 'plugins');
+            createFilterButtons('tagFilters', tags, 'tags');
+        }
+
+        // Create filter buttons
+        function createFilterButtons(containerId, options, filterType) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            options.forEach(option => {
+                const button = document.createElement('button');
+                button.className = 'filter-option';
+                button.textContent = option;
+                button.onclick = () => toggleFilter(filterType, option, button);
+                container.appendChild(button);
+            });
+        }
+
+        // Toggle filter
+        function toggleFilter(filterType, value, button) {
+            if (activeFilters[filterType].has(value)) {
+                activeFilters[filterType].delete(value);
+                button.classList.remove('active');
+            } else {
+                activeFilters[filterType].add(value);
+                button.classList.add('active');
+            }
+            applyFilters();
+        }
+
+        // Apply all filters
+        function applyFilters() {
+            filteredTechniques = allTechniques.filter(technique => {
+                // Search query filter
+                if (searchQuery && !matchesSearch(technique, searchQuery)) {
+                    return false;
+                }
+
+                // Category filter
+                if (activeFilters.category.size > 0 && !activeFilters.category.has(technique.category)) {
+                    return false;
+                }
+
+                // Stage filter
+                if (activeFilters.stage.size > 0 && !activeFilters.stage.has(technique.stage)) {
+                    return false;
+                }
+
+                // Difficulty filter
+                if (activeFilters.difficulty.size > 0 && !activeFilters.difficulty.has(technique.difficulty)) {
+                    return false;
+                }
+
+                // Optionality filter
+                if (activeFilters.optionality.size > 0 && !activeFilters.optionality.has(technique.optionality)) {
+                    return false;
+                }
+
+                // Plugins filter
+                if (activeFilters.plugins.size > 0) {
+                    const techniquePlugins = technique['plugin(s)'] || [];
+                    if (!Array.from(activeFilters.plugins).some(plugin => techniquePlugins.includes(plugin))) {
+                        return false;
+                    }
+                }
+
+                // Tags filter
+                if (activeFilters.tags.size > 0) {
+                    const techniqueTags = technique.tags || [];
+                    if (!Array.from(activeFilters.tags).some(tag => techniqueTags.includes(tag))) {
+                        return false;
+                    }
+                }
+
+                return true;
+            });
+
+            displayResults();
+            updateStats();
+        }
+
+        // Check if technique matches search query
+        function matchesSearch(technique, query) {
+            const searchText = query.toLowerCase();
+            return (
+                technique.name.toLowerCase().includes(searchText) ||
+                technique.category.toLowerCase().includes(searchText) ||
+                technique.howTo.toLowerCase().includes(searchText) ||
+                (technique.tags || []).some(tag => tag.toLowerCase().includes(searchText)) ||
+                (technique['plugin(s)'] || []).some(plugin => plugin.toLowerCase().includes(searchText))
+            );
+        }
+
+        // Display results
+        function displayResults() {
+            const resultsContainer = document.getElementById('results');
+            
+            if (filteredTechniques.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div class="no-results">
+                        <div style="font-size: 4em; margin-bottom: 20px; opacity: 0.5;">🎹</div>
+                        <h3>No techniques found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                    </div>
+                `;
+                return;
+            }
+
+            resultsContainer.innerHTML = filteredTechniques.map(technique => {
+                const categoryColor = categoryColorMap[technique.category];
+                
+                return `
+                    <div class="technique-card">
+                        <div class="technique-header">
+                            <div>
+                                <div class="technique-title">${technique.name}</div>
+                                <div class="technique-category" style="background: ${categoryColor.bg}; color: ${categoryColor.color}; border: 1px solid ${categoryColor.border};">${technique.category}</div>
+                            </div>
+                            <div class="favorite-star">${technique.favorite ? '⭐' : '☆'}</div>
+                        </div>
+                        
+                        <div class="technique-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Stage:</span>
+                                <span class="meta-value stage-${technique.stage}">${technique.stage}</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Difficulty:</span>
+                                <span class="meta-value difficulty-${technique.difficulty.toLowerCase()}">${technique.difficulty}</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Optionality:</span>
+                                <span class="meta-value optionality-${technique.optionality.toLowerCase()}">${technique.optionality}</span>
+                            </div>
+                        </div>
+                        
+                        ${(technique['plugin(s)'] || []).length > 0 ? `
+                            <div class="technique-plugins">
+                                <strong>Plugins:</strong><br>
+                                ${(technique['plugin(s)'] || []).map(plugin => {
+                                    const pluginColor = pluginColorMap[plugin];
+                                    return `<span class="plugin" style="background: ${pluginColor.bg}; color: ${pluginColor.color}; border: 1px solid ${pluginColor.border};">${plugin}</span>`;
+                                }).join('')}
+                            </div>
+                        ` : ''}
+                        
+                        ${(technique.tags || []).length > 0 ? `
+                            <div class="technique-tags">
+                                <strong>Tags:</strong><br>
+                                ${(technique.tags || []).map(tag => {
+                                    const tagColor = tagColorMap[tag];
+                                    return `<span class="tag" style="background: ${tagColor.bg}; color: ${tagColor.color}; border: 1px solid ${tagColor.border};">${tag}</span>`;
+                                }).join('')}
+                            </div>
+                        ` : ''}
+                        
+                        <div class="technique-howto">
+                            <strong>How to:</strong> ${technique.howTo}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Update stats
+        function updateStats() {
+            const stats = document.getElementById('stats');
+            const total = allTechniques.length;
+            const filtered = filteredTechniques.length;
+            const favorites = filteredTechniques.filter(t => t.favorite).length;
+            
+            stats.textContent = `Showing ${filtered} of ${total} techniques${favorites > 0 ? ` (${favorites} favorites)` : ''}`;
+        }
+
+        // Clear all filters (continued)
+       function clearAllFilters() {
+           // Reset active filters
+           Object.keys(activeFilters).forEach(key => {
+               activeFilters[key].clear();
+           });
+           
+           // Remove active class from all buttons
+           document.querySelectorAll('.filter-option.active').forEach(button => {
+               button.classList.remove('active');
+           });
+           
+           // Clear search
+           document.getElementById('searchInput').value = '';
+           searchQuery = '';
+           
+           // Reset results
+           filteredTechniques = [...allTechniques];
+           displayResults();
+           updateStats();
+       }
+
+       // Search input handler
+       document.getElementById('searchInput').addEventListener('input', function(e) {
+           searchQuery = e.target.value.trim();
+           applyFilters();
+       });
+
+       // Initialize the app
+       loadData();
+   </script>
+</body>
+</html>

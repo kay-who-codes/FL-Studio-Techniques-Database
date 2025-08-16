@@ -1,0 +1,910 @@
+{
+    "techniques": [
+        {
+            "name": "Reverse a Sample",
+            "category": "Sample Manipulation",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Sample",
+                "Audio",
+                "Editing"
+            ],
+            "plugin(s)": [
+                "Playlist",
+                "Channel Rack"
+            ],
+            "favorite": true,
+            "howTo": "Alt + Double-Click the sample and click the reverse button."
+        },
+        {
+            "name": "Sidechain Compression",
+            "category": "Mixing",
+            "stage": "Mixing",
+            "optionality": "Necessary",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Compression",
+                "Dynamics",
+                "Kick"
+            ],
+            "plugin(s)": [
+                "Fruity Limiter"
+            ],
+            "favorite": true,
+            "howTo": "Use Fruity Limiter or another compressor with the kick drum as input."
+        },
+        {
+            "name": "Piano Roll Quantize",
+            "category": "Keyboard Shortcut",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Shortcut",
+                "Midi",
+                "Editing"
+            ],
+            "plugin(s)": [
+                "Piano Roll"
+            ],
+            "favorite": false,
+            "howTo": "Select notes in Piano Roll and press Alt+Q to quantize."
+        },
+        {
+            "name": "Create Ghost Notes",
+            "category": "Composition",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Ghost",
+                "Velocity",
+                "Drums"
+            ],
+            "plugin(s)": [
+                "Piano Roll"
+            ],
+            "favorite": false,
+            "howTo": "Lower velocity of certain drum hits to create ghost notes that add groove without overpowering the main pattern."
+        },
+        {
+            "name": "EQ High-Pass Filter",
+            "category": "Mixing",
+            "stage": "Mixing",
+            "optionality": "Necessary",
+            "difficulty": "Easy",
+            "tags": [
+                "Eq",
+                "Frequency",
+                "Cleanup"
+            ],
+            "plugin(s)": [
+                "Parametric EQ 2",
+                "REQ 4",
+                "Fruity Filter"
+            ],
+            "favorite": true,
+            "howTo": "Use high-pass filter to remove unnecessary low frequencies from non-bass elements."
+        },
+        {
+            "name": "Automation Clips",
+            "category": "Automation",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Automation",
+                "Movement",
+                "Dynamics"
+            ],
+            "plugin(s)": [
+                "Playlist"
+            ],
+            "favorite": true,
+            "howTo": "Right-click any knob/slider and select 'Create automation clip' to add movement to your parameters."
+        },
+        {
+            "name": "Parallel Compression",
+            "category": "Mixing",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Hard",
+            "tags": [
+                "Compression",
+                "Parallel",
+                "Punch"
+            ],
+            "plugin(s)": [
+                "Fruity Send",
+                "Compressor"
+            ],
+            "favorite": false,
+            "howTo": "Send a copy of your signal to a heavily compressed bus and blend it with the original for punch while maintaining dynamics."
+        },
+        {
+            "name": "Slice and Pitch Sample",
+            "category": "Sample Manipulation",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Slicing",
+                "Pitch",
+                "Chopping"
+            ],
+            "plugin(s)": [
+                "Slicex",
+                "Fruity Slicer"
+            ],
+            "favorite": true,
+            "howTo": "Load sample into Slicex, auto-slice, then map slices to Piano Roll keys for creative chopping."
+        },
+        {
+            "name": "Quick Duplicate Pattern",
+            "category": "Keyboard Shortcut",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Shortcut",
+                "Pattern",
+                "Workflow"
+            ],
+            "plugin(s)": [
+                "Channel Rack"
+            ],
+            "favorite": false,
+            "howTo": "Ctrl+L to duplicate the current pattern quickly."
+        },
+        {
+            "name": "Stereo Imaging with Fruity Stereo Enhancer",
+            "category": "Mixing",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Stereo",
+                "Width",
+                "Spatial"
+            ],
+            "plugin(s)": [
+                "Fruity Stereo Enhancer"
+            ],
+            "favorite": false,
+            "howTo": "Use Fruity Stereo Enhancer to widen stereo field. Be careful with bass frequencies - keep them mono."
+        },
+        {
+            "name": "Layer Velocity for Dynamics",
+            "category": "Composition",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Velocity",
+                "Dynamics",
+                "Expression"
+            ],
+            "plugin(s)": [
+                "Piano Roll"
+            ],
+            "favorite": true,
+            "howTo": "Use Alt+mouse wheel to adjust velocity of selected notes. Create natural dynamics by varying velocity."
+        },
+        {
+            "name": "Save Mixer State",
+            "category": "Workflow",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Mixer",
+                "State",
+                "Backup"
+            ],
+            "plugin(s)": [
+                "Mixer"
+            ],
+            "favorite": false,
+            "howTo": "Right-click mixer track and 'Save mixer track state' to backup your mix settings."
+        },
+        {
+            "name": "Fruity Granulizer for Textures",
+            "category": "Sound Design",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Hard",
+            "tags": [
+                "Granular",
+                "Texture",
+                "Atmospheric"
+            ],
+            "plugin(s)": [
+                "Fruity Granulizer"
+            ],
+            "favorite": true,
+            "howTo": "Load audio into Fruity Granulizer and adjust grain size/speed for unique textures and atmospheres."
+        },
+        {
+            "name": "Quick Channel Clone",
+            "category": "Keyboard Shortcut",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Shortcut",
+                "Clone",
+                "Channel"
+            ],
+            "plugin(s)": [
+                "Channel Rack"
+            ],
+            "favorite": false,
+            "howTo": "Alt+drag a channel to quickly clone it with all settings intact."
+        },
+        {
+            "name": "Edison Recording",
+            "category": "Recording",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Recording",
+                "Audio",
+                "Capture"
+            ],
+            "plugin(s)": [
+                "Edison"
+            ],
+            "favorite": true,
+            "howTo": "Insert Edison on mixer track, click record, play your project to capture audio directly into Edison."
+        },
+        {
+            "name": "LFO Shape Modulation",
+            "category": "Modulation",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Lfo",
+                "Modulation",
+                "Shape"
+            ],
+            "plugin(s)": [
+                "Fruity LFO"
+            ],
+            "favorite": false,
+            "howTo": "Route Fruity LFO to parameters and experiment with different LFO shapes for various modulation effects."
+        },
+        {
+            "name": "Bus Compression",
+            "category": "Mixing",
+            "stage": "Mixing",
+            "optionality": "Necessary",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Compression",
+                "Bus",
+                "Glue"
+            ],
+            "plugin(s)": [
+                "Fruity Compressor"
+            ],
+            "favorite": true,
+            "howTo": "Route multiple channels to a bus and apply gentle compression (2-4dB gain reduction) to glue elements together."
+        },
+        {
+            "name": "Chord Progression Generator",
+            "category": "Composition",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Chords",
+                "Progression",
+                "Harmony"
+            ],
+            "plugin(s)": [
+                "Piano Roll"
+            ],
+            "favorite": false,
+            "howTo": "Use Piano Roll's chord stamp tool (Ctrl+Shift+C) to quickly create chord progressions."
+        },
+        {
+            "name": "Maximus Multiband Mastering",
+            "category": "Mastering",
+            "stage": "Mastering",
+            "optionality": "Optional",
+            "difficulty": "Hard",
+            "tags": [
+                "Multiband",
+                "Mastering",
+                "Loudness"
+            ],
+            "plugin(s)": [
+                "Maximus"
+            ],
+            "favorite": true,
+            "howTo": "Use Maximus on master bus with preset as starting point, adjust bands for balanced frequency response."
+        },
+        {
+            "name": "Slide Notes",
+            "category": "Composition",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Slide",
+                "Portamento",
+                "Expression"
+            ],
+            "plugin(s)": [
+                "Piano Roll"
+            ],
+            "favorite": false,
+            "howTo": "Alt+right-click and drag from note to create slide/portamento effects between notes."
+        },
+        {
+            "name": "Parametric EQ Bell Curve",
+            "category": "Mixing",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Eq",
+                "Bell",
+                "Frequency"
+            ],
+            "plugin(s)": [
+                "Parametric EQ 2"
+            ],
+            "favorite": false,
+            "howTo": "Use bell curves to boost/cut specific frequencies. Narrow Q for precision, wide Q for musical changes."
+        },
+        {
+            "name": "Tempo Automation",
+            "category": "Automation",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Tempo",
+                "Automation",
+                "Timing"
+            ],
+            "plugin(s)": [
+                "Playlist"
+            ],
+            "favorite": false,
+            "howTo": "Create automation clip for Tempo in Tools menu to create tempo changes and breaks."
+        },
+        {
+            "name": "Gross Beat for Rhythmic Effects",
+            "category": "Sound Design",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Rhythmic",
+                "Stutter",
+                "Time"
+            ],
+            "plugin(s)": [
+                "Gross Beat"
+            ],
+            "favorite": true,
+            "howTo": "Load Gross Beat on mixer insert and use presets for stutters, half-time, and rhythmic manipulation."
+        },
+        {
+            "name": "Patcher for Complex Routing",
+            "category": "Workflow",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Hard",
+            "tags": [
+                "Routing",
+                "Complex",
+                "Modular"
+            ],
+            "plugin(s)": [
+                "Patcher"
+            ],
+            "favorite": false,
+            "howTo": "Use Patcher to create complex routing scenarios and save custom multi-plugin setups."
+        },
+        {
+            "name": "Fruity Delay Bank Creative Uses",
+            "category": "Sound Design",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Delay",
+                "Creative",
+                "Stereo"
+            ],
+            "plugin(s)": [
+                "Fruity Delay Bank"
+            ],
+            "favorite": true,
+            "howTo": "Use different delay times on L/R channels in Fruity Delay Bank to create wide, rhythmic delay effects."
+        },
+        {
+            "name": "Scale Highlighting",
+            "category": "Composition",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Scale",
+                "Highlight",
+                "Theory"
+            ],
+            "plugin(s)": [
+                "Piano Roll"
+            ],
+            "favorite": false,
+            "howTo": "Click the Piano Roll scale button and select a scale to highlight only notes in that key."
+        },
+        {
+            "name": "Fruity Convolver for Space",
+            "category": "Sound Design",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Convolution",
+                "Reverb",
+                "Space"
+            ],
+            "plugin(s)": [
+                "Fruity Convolver"
+            ],
+            "favorite": false,
+            "howTo": "Load impulse responses in Fruity Convolver to add realistic spaces and textures to sounds."
+        },
+        {
+            "name": "Playlist Selection Shortcut",
+            "category": "Keyboard Shortcut",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Shortcut",
+                "Selection",
+                "Playlist"
+            ],
+            "plugin(s)": [
+                "Playlist"
+            ],
+            "favorite": false,
+            "howTo": "Ctrl+A to select all, Ctrl+Shift+A to select all after playhead position."
+        },
+        {
+            "name": "Harmor Resynthesis",
+            "category": "Sound Design",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Hard",
+            "tags": [
+                "Resynthesis",
+                "Harmor",
+                "Additive"
+            ],
+            "plugin(s)": [
+                "Harmor"
+            ],
+            "favorite": true,
+            "howTo": "Drag audio files into Harmor for additive resynthesis. Use Image tab to process audio in creative ways."
+        },
+        {
+            "name": "Multiband Processing",
+            "category": "Mixing",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Hard",
+            "tags": [
+                "Multiband",
+                "Frequency",
+                "Processing"
+            ],
+            "plugin(s)": [
+                "Multiband Compressor"
+            ],
+            "favorite": false,
+            "howTo": "Split frequency spectrum into bands and process each independently for surgical control."
+        },
+        {
+            "name": "Ghost Channel for Reference",
+            "category": "Workflow",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Ghost",
+                "Reference",
+                "Mixing"
+            ],
+            "plugin(s)": [
+                "Channel Rack"
+            ],
+            "favorite": false,
+            "howTo": "Right-click channel and select 'Make ghost' to use as reference without affecting the mix."
+        },
+        {
+            "name": "Fruity Vocoder Setup",
+            "category": "Sound Design",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Vocoder",
+                "Voice",
+                "Synthesis"
+            ],
+            "plugin(s)": [
+                "Fruity Vocoder"
+            ],
+            "favorite": false,
+            "howTo": "Route carrier and modulator signals to Fruity Vocoder inputs for classic vocoder effects."
+        },
+        {
+            "name": "Note Events for Automation",
+            "category": "Automation",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Note",
+                "Events",
+                "Control"
+            ],
+            "plugin(s)": [
+                "Piano Roll"
+            ],
+            "favorite": true,
+            "howTo": "Use Piano Roll note events (right-click note) to trigger parameter changes at specific note timings."
+        },
+        {
+            "name": "Mixer Track Grouping",
+            "category": "Workflow",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Grouping",
+                "Organization",
+                "Mixer"
+            ],
+            "plugin(s)": [
+                "Mixer"
+            ],
+            "favorite": false,
+            "howTo": "Right-click mixer track and select 'Color' to organize related tracks visually."
+        },
+        {
+            "name": "Performance Mode",
+            "category": "Workflow",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Performance",
+                "Live",
+                "Mode"
+            ],
+            "plugin(s)": [
+                "Playlist"
+            ],
+            "favorite": false,
+            "howTo": "Switch to Performance Mode (View menu) for live loop triggering and song arrangement."
+        },
+        {
+            "name": "Envelope Controller",
+            "category": "Modulation",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Envelope",
+                "Adsr",
+                "Modulation"
+            ],
+            "plugin(s)": [
+                "Envelope Controller"
+            ],
+            "favorite": false,
+            "howTo": "Use Envelope Controller to create complex ADSR envelopes for any parameter modulation."
+        },
+        {
+            "name": "Fruity PanOMatic for Movement",
+            "category": "Mixing",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Panning",
+                "Movement",
+                "Spatial"
+            ],
+            "plugin(s)": [
+                "Fruity PanoMatic"
+            ],
+            "favorite": false,
+            "howTo": "Automate Fruity PanOMatic for smooth panning movements and stereo positioning."
+        },
+        {
+            "name": "Project Bones",
+            "category": "Workflow",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Project",
+                "Bones",
+                "Organization"
+            ],
+            "plugin(s)": [
+                "Project"
+            ],
+            "favorite": false,
+            "howTo": "Save 'Project Bones' (File menu) to create templates with your preferred routing and effects."
+        },
+        {
+            "name": "Fruity Formula Controller",
+            "category": "Modulation",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Hard",
+            "tags": [
+                "Formula",
+                "Mathematical",
+                "Control"
+            ],
+            "plugin(s)": [
+                "Fruity Formula Controller"
+            ],
+            "favorite": false,
+            "howTo": "Create mathematical relationships between parameters using Fruity Formula Controller."
+        },
+        {
+            "name": "Audio Recording with Edison",
+            "category": "Recording",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Recording",
+                "Edison",
+                "Audio"
+            ],
+            "plugin(s)": [
+                "Edison"
+            ],
+            "favorite": true,
+            "howTo": "Set Edison to record and arm the track to capture external audio sources directly into your project."
+        },
+        {
+            "name": "ZGameEditor Visualizer",
+            "category": "Visualization",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Visual",
+                "Zgame",
+                "Effects"
+            ],
+            "plugin(s)": [
+                "ZGameEditor Visualizer"
+            ],
+            "favorite": false,
+            "howTo": "Add ZGameEditor Visualizer to create responsive visual effects that react to your audio."
+        },
+        {
+            "name": "Vintage Chorus Effect",
+            "category": "Sound Design",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Chorus",
+                "Vintage",
+                "Modulation"
+            ],
+            "plugin(s)": [
+                "Fruity Chorus"
+            ],
+            "favorite": false,
+            "howTo": "Use Fruity Chorus with slow rate and moderate depth for vintage-style width and movement."
+        },
+        {
+            "name": "Quick Pattern Select",
+            "category": "Keyboard Shortcut",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Shortcut",
+                "Pattern",
+                "Navigation"
+            ],
+            "plugin(s)": [
+                "Channel Rack"
+            ],
+            "favorite": false,
+            "howTo": "Use + and - on numpad to quickly navigate between patterns."
+        },
+        {
+            "name": "Fruity Send Routing",
+            "category": "Workflow",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Send",
+                "Routing",
+                "Bus"
+            ],
+            "plugin(s)": [
+                "Fruity Send"
+            ],
+            "favorite": true,
+            "howTo": "Use Fruity Send to route signals to auxiliary buses for reverb, delay, or parallel processing."
+        },
+        {
+            "name": "Step Sequencer Ghost Notes",
+            "category": "Composition",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Step",
+                "Sequencer",
+                "Ghost"
+            ],
+            "plugin(s)": [
+                "Channel Rack"
+            ],
+            "favorite": false,
+            "howTo": "Right-click step sequencer button and adjust velocity to create ghost note patterns."
+        },
+        {
+            "name": "Fruity Reverb 2 Plates",
+            "category": "Sound Design",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Reverb",
+                "Plate",
+                "Space"
+            ],
+            "plugin(s)": [
+                "Fruity Reverb 2"
+            ],
+            "favorite": false,
+            "howTo": "Use plate reverb settings in Fruity Reverb 2 for vintage-style reverb on vocals and drums."
+        },
+        {
+            "name": "MIDI Controller Link",
+            "category": "Workflow",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Midi",
+                "Controller",
+                "Link"
+            ],
+            "plugin(s)": [
+                "Options"
+            ],
+            "favorite": true,
+            "howTo": "Right-click any parameter and select 'Link to controller' to assign MIDI controls."
+        },
+        {
+            "name": "Fruity Parametric EQ 2 Spectrum",
+            "category": "Mixing",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Spectrum",
+                "Analyzer",
+                "Frequency"
+            ],
+            "plugin(s)": [
+                "Parametric EQ 2"
+            ],
+            "favorite": true,
+            "howTo": "Enable spectrum display in Parametric EQ 2 to see frequency content while making EQ adjustments."
+        },
+        {
+            "name": "Newtone Pitch Correction",
+            "category": "Sound Design",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Pitch",
+                "Correction",
+                "Vocal"
+            ],
+            "plugin(s)": [
+                "Newtone"
+            ],
+            "favorite": false,
+            "howTo": "Load audio into Newtone for detailed pitch correction and vocal tuning capabilities."
+        },
+        {
+            "name": "Lifetime Updates Backup",
+            "category": "Workflow",
+            "stage": "Composition",
+            "optionality": "Necessary",
+            "difficulty": "Easy",
+            "tags": [
+                "Backup",
+                "Project",
+                "Save"
+            ],
+            "plugin(s)": [
+                "Project"
+            ],
+            "favorite": true,
+            "howTo": "Regularly save project files and use 'Save new version' (Ctrl+Shift+S) to keep incremental backups."
+        },
+        {
+            "name": "Fruity Peak Controller Ducking",
+            "category": "Modulation",
+            "stage": "Mixing",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Peak",
+                "Controller",
+                "Ducking"
+            ],
+            "plugin(s)": [
+                "Fruity Peak Controller"
+            ],
+            "favorite": false,
+            "howTo": "Use Fruity Peak Controller to create ducking effects by linking volume to input signal levels."
+        },
+        {
+            "name": "Harmless Pluck Synthesis",
+            "category": "Sound Design",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Intermediate",
+            "tags": [
+                "Harmless",
+                "Pluck",
+                "Synthesis"
+            ],
+            "plugin(s)": [
+                "Harmless"
+            ],
+            "favorite": false,
+            "howTo": "Use Harmless with short decay and bright harmonics to create plucked string and harp sounds."
+        },
+        {
+            "name": "Playlist Time Stretching",
+            "category": "Sample Manipulation",
+            "stage": "Composition",
+            "optionality": "Optional",
+            "difficulty": "Easy",
+            "tags": [
+                "Stretch",
+                "Time",
+                "Tempo"
+            ],
+            "plugin(s)": [
+                "Playlist"
+            ],
+            "favorite": false,
+            "howTo": "Alt+drag audio clip edges in Playlist to time-stretch without changing pitch."
+        }
+    ]
+}
