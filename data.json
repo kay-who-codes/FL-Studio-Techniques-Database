@@ -52,7 +52,7 @@
                 "Little AlterBoy"
             ],
             "favorite": false,
-            "howTo": "Add Pitch SHifter to the mixer channel, then go to the Voice tab, and adjust the formant"
+            "howTo": "Add Pitch Shifter to the mixer channel, then go to the Voice tab, and adjust the formant"
         },
         {
             "name": "Create Ghost Notes",
@@ -910,4 +910,5 @@
         }
     ]
 }
+
 
