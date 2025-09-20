@@ -36,21 +36,23 @@
             "howTo": "Use Fruity Limiter or another compressor with the kick drum as input."
         },
         {
-            "name": "Piano Roll Quantize",
-            "category": "Keyboard Shortcut",
+            "name": "Formant-Shift",
+            "category": "Sample Manipulation",
             "stage": "Composition",
             "optionality": "Optional",
             "difficulty": "Easy",
             "tags": [
-                "Shortcut",
-                "Midi",
-                "Editing"
+                "Vocal",
+                "Voice",
+                "Pitch",
+                "Frequency"
             ],
             "plugin(s)": [
-                "Piano Roll"
+                "Pitch Shifter",
+                "Little AlterBoy"
             ],
             "favorite": false,
-            "howTo": "Select notes in Piano Roll and press Alt+Q to quantize."
+            "howTo": "Add Pitch SHifter to the mixer channel, then go to the Voice tab, and adjust the formant"
         },
         {
             "name": "Create Ghost Notes",
@@ -908,3 +910,4 @@
         }
     ]
 }
+
